@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ </head>
+<body>
+
+
+
+
+
+<article resource="#">
+  Studenti
+  <section>
+    <ol>
+      <!-- The first author, Robin Berjon -->
+      <li property="schema:author" typeof="sa:ContributorRole">
+        <a property="schema:author" href="https://github.com/iuliado" typeof="schema:Person">
+          <span property="schema:givenName">Iulia</span>
+          <span property="schema:familyName">Dobos</span>
+        </a>
+        <a href="#computerscience" property="sa:roleAffiliation" resource="https://www.info.uaic.ro">a</a>
+        <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+          <a property="schema:email" href="iulia.dobos19@gmail.com" title="corresponding author">✉</a>
+        </sup>
+      </li>
+      <!-- A contributor, Sebastien Ballesteros -->
+      <li property="schema:contributor" typeof="sa:ContributorRole">
+        <a property="schema:contributor" href="https://github.com/gabrieliovu" typeof="schema:Person">
+          <span property="schema:givenName">Iovu</span>
+          <span property="schema:familyName">Gabriel</span>
+        </a>
+
+        <a href="#computerscience" property="sa:roleAffiliation" resource="https://www.info.uaic.ro">a</a>
+      </li>
+    </ol>
+    <!-- The affiliation list -->
+    <ol>
+    Facultate
+      <li id="computerscience">
+        <a href="https://www.info.uaic.ro/" typeof="schema:Corporation">
+          <span property="schema:name">computerscience</span>
+        </a>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+      <h2>Cerinta proiect</h6>
+        <p>
+            Sa se implementeze o aplicatie Web care simuleaza o cafenea destinata in special studentilor informaticieni.
+            Interactiunea cu "clientii" se va realiza din pagini Web publice gazduite pe un anumit server Web, pe baza cimpului 'Referer' din antetul unui mesaj HTTP.
+             Aplicatia trebuie sa puna la dispozitia "clientilor" o serie de resurse identificate via URI precum '/intrare', '/meniu', '/prefer/cafea', '/comanda/suc',
+             '/comanda/zacusca', '/nota', '/iesire' etc. (dati frau liber imaginatiei). Desi identificarea clientului se va face pe baza contului din URL-ul oferit de Referer,
+             trebuie mentinut un nivel minimal contabil si informativ: ce produse sunt in stoc si la ce pret, cine si ce a comandat, care e valoarea totala a notei de plata,
+             la ce ora s-a inregistrat o comanda, cine mai era atunci in cafenea etc. Resursele sunt disponibile in cantitati finite, eventual ajustabile dinamic.
+             "Filmul" ocuparii cafenelei va putea fi expus, in mod dinamic, ca document HTML, ca date JSON si ca flux de stiri Atom. De asemenea, "barman"-ul trebuie
+             sa raspunda clientilor in mod "politicos HTTP" -- exemplu: daca se recurge la 'GET /comanda/alcool', se va intoarce codul 403.
+        </p>
+      <section>
+     </h1>
+
+      <section>
+      <h3>Tehnologii utilizate</h3>
+        <p>
+         In aceasta aplicatie vom folosi pentru partea de front-end JavaScript, HTML5,CSS, iar pentru partea de back-end vom folosi PHP, MySql.
+         In plus, pentru partea de back-end, vom folosi programul Wamp pentru a lucra cu limbajele specifice. Pentru partea de front-end, am folosit in plus
+         bootstrap,tether si jquery.
+         Motivul pentru care am ales aceste tehnologii si limbaje este facilitatea si accesibilitatea pe care le ofera acestea.
+         Programul Wamp acopera necesitatea unui server.
+
+        </p>
+      <section>
+     </h3>
+
+     <section>
+      <h4>Arhitectura bazei de date</h4>
+        <p>
+        Avand in vedere faptul ca enuntul aplicatiei cere sa tinem un nivel minimal al
+         contabilitatii cafenelei, cine si ce a comandat, totalul notei pentru un client/masa, stocul produselor,
+         am creat o baza de date in care sa gestionam acestea.
+        </p>
+      <section>
+     </h4>
+
+      <section>
+      <h4>Arhitectura bazei de date</h4>
+        <p>
+        Avand in vedere faptul ca enuntul aplicatiei cere sa tinem un nivel minimal al
+         contabilitatii cafenelei, cine si ce a comandat, totalul notei pentru un client/masa, stocul produselor,
+         am creat o baza de date in care sa gestionam acestea.
+        </p>
+      <section>
+     </h4>
+
+
+
+
+  </article>
+
+</body>
+</html>
