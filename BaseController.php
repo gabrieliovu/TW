@@ -14,9 +14,13 @@ class BaseController {
 	public function __construct() {
 		//
 	}
+    // $this->respond('views/contact.html', ['name' => 'Iulia']);
 	public function respond($responseOrTemplate, $useTemplateOrTemplateParams = true, $responseCode = 200) {
 		header('Content-Type: text/html; charset=utf-8');
 		http_response_code($responseCode);
+        $viewClosure = function ($params, $template) { // ca sa nu mai aiba acces la variab parintelui
+            eval('?>' . $template . '<?php');
+        };
 		if (!$useTemplateOrTemplateParams) {
 			echo $responseOrTemplate;
 		} else {
@@ -25,15 +29,10 @@ class BaseController {
 				echo 'Error: view file "' . $responseOrTemplate . '" not found.';
 				exit;
 			}
-			$template = file_get_contents($responseOrTemplate);
-			if (is_array($useTemplateOrTemplateParams)) {
-				foreach ($useTemplateOrTemplateParams as $name => $value) {
-					$template = str_replace('{{' . $name . '}}', $value, $template);
-				}
-			}
+			$template = file_get_contents($responseOrTemplate); // path0
 			if (!$this->layout['use']) {
 				// directly display the view if there's no layout in use
-				echo $template;
+                eval('?>' . $viewClosure($useTemplateOrTemplateParams, $template) . '<?php');
 			} else {
 				// replace @content in layout and display the layout
 				if (!file_exists($this->layout['template'])) {
@@ -41,18 +40,16 @@ class BaseController {
 					exit;
 				}
 				$layout = file_get_contents($this->layout['template']);
-				foreach ($this->layout['params'] as $name => $value) {
-					$layout = str_replace('{{' . $name . '}}', $value, $layout);
-				}
+
 				$layout = str_replace('@content', $template, $layout);
-				echo $layout;
+                eval('?>' . $viewClosure($useTemplateOrTemplateParams, $layout) . '<?php');
 			}
 		}
 	}
 
 	public function respondJson($response, $responseCode = 200) {
 		http_response_code($responseCode);
-		header("Content-Type: application/json;charset=utf-8");
+		header("Content-Type: application/json+rss+xml;charset=ISO-8859-1");
 		echo json_encode($response);
 	}
 

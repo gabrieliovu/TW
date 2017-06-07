@@ -2,6 +2,7 @@
 
 // also <?php nu se inchide
 
+ini_set('error_reporting', -1);
 ini_set('display_errors', true);
 
 include 'autoload.php';
@@ -19,6 +20,8 @@ $routes = [
     '/comanda/gogosi'=>'IndexController@comanda_gogosi',
     '/comanda/teme'=>'IndexController@comanda_teme',
     '/comanda/zacusca'=>'IndexController@comanda_zacusca',
+    '/comanda/alcool' =>'IndexController@comanda_alcool',
+    '/comanda/droguri' =>'IndexController@comanda_droguri',
     '/nota'=>'IndexController@nota',
     '/iesire'=>'IndexController@iesire'
 ];
